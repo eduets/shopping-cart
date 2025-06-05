@@ -23,3 +23,293 @@ button:hover {
 }
 
 /* Style */
+@font-face {
+  font-family: "Exo 2";
+  src: url("../assets/fonts/Exo2-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Exo2-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-base: "Exo 2", Inter, Roboto, "Helvetica Neue", "Arial Nova",
+    "Nimbus Sans", Arial, sans-serif;
+  --color-background-dark: #0b0b0b;
+  --color-background-soft: #101010;
+  --color-background-interactive: #222323;
+  --color-line: #cecabf;
+  --color-highlight: #bfaf78;
+}
+
+html,
+body {
+  background-color: var(--color-background-soft);
+  color: var(--color-line);
+  font-family: var(--font-base);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+nav {
+  font-size: 1.7rem;
+  display: flex;
+  position: sticky;
+  top: 0px;
+  background-color: var(--color-background-dark);
+  box-shadow: 0px 4px 6px var(--color-background-soft);
+}
+
+nav > * {
+  flex: 0 0 auto;
+  padding: min(40px, 4%) min(50px, 5%);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-line);
+}
+
+nav a:hover {
+  background-color: var(--color-background-interactive);
+}
+
+.cart-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.cart-icon {
+  height: 1.7rem;
+  width: auto;
+}
+
+.cart-value {
+  min-width: 1lh/2;
+  background-color: var(--color-highlight);
+  color: var(--color-background-interactive);
+  text-align: center;
+  border-radius: 50%;
+  padding: 0px 10px;
+  transform: scale(0.8);
+}
+
+.shop h1 {
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.product-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 1.1rem;
+  column-gap: 2px;
+  row-gap: 10px;
+  padding: 20px 0;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 310px;
+  padding: 10px;
+  background-color: var(--color-background-dark);
+  border-radius: 10px;
+  border: 1px solid var(--color-background-interactive);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card:hover {
+  box-shadow: 2px 2px 0px var(--color-highlight);
+}
+
+.product-card-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid var(--color-background-interactive);
+}
+
+.product-card-name {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.product-card-price {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.product-card-form {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  margin-top: auto;
+}
+.product-card-form > * {
+  flex: 0 0 auto;
+}
+.product-card-form input {
+  flex: 0 0 50px;
+  min-width: 0;
+  text-align: right;
+  background-color: var(--color-line);
+  border: none;
+  padding: 0 4px;
+}
+.product-card-form > button[type="submit"] {
+  margin-left: auto;
+}
+.product-card-form button {
+  background-color: var(--color-line);
+  border: none;
+}
+.product-card-form input:hover,
+.product-card-form button:hover {
+  background-color: var(--color-highlight);
+}
+
+.products-cart {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  gap: 10px;
+  padding: 30px 0;
+  align-items: center;
+}
+.product-cart {
+  flex: 0 0 auto;
+  width: min(100%, 500px);
+  padding: 10px;
+  background-color: var(--color-background-dark);
+  border-radius: 10px;
+  border: 1px solid var(--color-background-interactive);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product-cart:hover {
+  box-shadow: 2px 2px 0px var(--color-highlight);
+}
+.product-cart-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+.product-cart-name {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.cart-inputs {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.cart-inputs > * {
+  flex: 0 0 auto;
+}
+.cart-inputs input {
+  flex: 0 0 50px;
+  min-width: 0;
+  text-align: right;
+  background-color: var(--color-line);
+  border: none;
+  padding: 0 4px;
+}
+.cart-inputs > .remove {
+  margin-left: auto;
+}
+.cart-inputs button {
+  background-color: var(--color-line);
+  border: none;
+}
+.cart-inputs input:hover,
+.cart-inputs button:hover {
+  background-color: var(--color-highlight);
+}
+.cart-inputs .remove:hover {
+  background-color: tomato;
+}
+.total-price {
+  font-size: 1.8rem;
+}
+.checkout {
+  font-size: 1.8rem;
+  background-color: var(--color-line);
+  padding: 10px 20px;
+  border: none;
+}
+.checkout:hover {
+  background-color: var(--color-highlight);
+}
+
+#root > *:last-child {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.home-background {
+  background-image: url("../assets/images/elden-ring.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  height: 490px;
+}
+
+.home h1 {
+  padding: min(20px, 2%) min(40px, 4%);
+  text-align: center;
+}
+
+.home h2 {
+  padding: min(20px, 2%) min(40px, 4%);
+}
+
+.home p {
+  padding: min(10px, 1%) min(40px, 4%);
+  font-size: 1.4rem;
+}
+
+.message {
+  padding: 100px 10px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.error {
+  text-align: center;
+  padding: 100px 10px;
+}
+.error h1 {
+  display: block;
+  padding: 50px 0px;
+  font-size: 3rem;
+}
+.error a {
+  display: block;
+  padding: 20px 0px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--color-line);
+}
+
+.error a:hover {
+  background-color: var(--color-background-interactive);
+}
